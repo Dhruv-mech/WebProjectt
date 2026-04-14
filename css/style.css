@@ -1,24 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@600&display=swap');
 
-/* 1. CORE LAYOUT - UNIFIED SCALING */
+/* 1. CORE LAYOUT */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #0b0b0b;
+  background-color: #0b0b0b;
+  background-image: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)),
+                    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* This locks the width across all pages */
 .container {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-/* 2. NAVIGATION - FIXED VISIBILITY */
+/* 2. NAVIGATION */
 .navbar {
   background: rgba(0, 0, 0, 0.98) !important;
   border-bottom: 1px solid #d4af37;
@@ -45,7 +49,7 @@ body {
   color: #d4af37 !important;
 }
 
-/* 3. HERO & BUTTONS - INDEX FIX */
+/* 3. HERO - INDEX */
 .hero {
   min-height: 80vh;
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
@@ -58,6 +62,26 @@ body {
   text-align: center;
 }
 
+/* 4. PAGE HERO - All inner pages */
+.page-hero {
+  min-height: 280px;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+              url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  font-size: 2.8rem;
+}
+
+/* 5. BUTTONS */
 .btn-gold {
   background: #d4af37;
   color: #000;
@@ -74,7 +98,7 @@ body {
   color: #d4af37;
 }
 
-/* 4. LUXURY CARDS (Index, Menu, Gallery) */
+/* 6. LUXURY CARDS (Index, Gallery) */
 .luxury-card {
   background: #1a1a1a;
   border: 1px solid #333;
@@ -86,11 +110,10 @@ body {
 
 .luxury-card:hover {
   border-color: #d4af37;
-  transform: translateY(-10px);
+  transform: translateY(-6px);
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
 }
 
-/* Special styling for the white cards on Index */
 .card-white {
   background: #fff;
   color: #000;
@@ -100,6 +123,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 140px;
 }
 
 .card-white:hover {
@@ -107,13 +131,68 @@ body {
   color: #fff;
 }
 
+/* 7. GALLERY IMAGES */
 .img-standard {
   width: 100%;
-  height: 250px;
+  height: 220px;
   object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-/* 5. LIGHTBOX POPUP */
+.img-standard:hover {
+  opacity: 0.85;
+}
+
+/* 8. MENU CARDS */
+.menu-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.menu-card:hover {
+  border-color: #d4af37;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+}
+
+.menu-img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.menu-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-body {
+  padding: 16px 20px;
+  text-align: center;
+}
+
+.menu-body h5 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.price-tag {
+  color: #d4af37;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* 9. LIGHTBOX */
 #lightbox {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
@@ -129,8 +208,122 @@ body {
   max-width: 90%;
   max-height: 80%;
   border: 2px solid #d4af37;
+  border-radius: 8px;
 }
 
-/* 6. UTILITY */
-.section-padding { padding: 80px 0; }
+/* 10. ABOUT / CONTACT / BOOKING SECTIONS */
+.section-padding { padding: 70px 0; }
+.section { padding: 70px 0; }
+
 .text-gold { color: #d4af37; }
+
+.about-text {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ccc;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* 11. FORMS */
+.form-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-control {
+  background: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  color: #fff !important;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 0 2px rgba(212,175,55,0.15) !important;
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: #777 !important;
+}
+
+#formMsg, #bookingMsg {
+  color: #d4af37;
+  font-weight: 500;
+}
+
+/* 12. MENU TABLE */
+.menu-table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(20, 20, 20, 0.85);
+}
+
+.menu-table thead tr {
+  background: #d4af37;
+  color: #000;
+}
+
+.menu-table thead th {
+  padding: 14px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+.menu-table tbody tr {
+  border-bottom: 1px solid #2a2a2a;
+  transition: background 0.2s;
+}
+
+.menu-table tbody tr:hover {
+  background: rgba(212, 175, 55, 0.07);
+}
+
+.menu-table td {
+  padding: 14px 20px;
+  vertical-align: middle;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.menu-table td.price {
+  color: #d4af37;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.menu-table .thumb {
+  width: 64px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #333;
+  display: block;
+}
+
+.menu-section-label {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  font-size: 1.3rem;
+  margin: 40px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #2a2a2a;
+}
